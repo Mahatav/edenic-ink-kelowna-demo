@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book | Edenic Ink Brows, Kelowna</title>
+<meta name="description" content="Pick a service, a day, and a time to book at Edenic Ink Brows in Kelowna." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+.book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start;}
+.book-side h2{font-size:clamp(1.5rem,2.4vw,1.9rem);margin:0 0 16px;}
+.book-side p{font-size:15.5px;color:rgba(51,37,31,.68);margin:0 0 22px;}
+.hours-card{padding:26px 28px;margin-bottom:24px;}
+.hours-card h3{margin:0 0 14px;font-size:17px;}
+.hours-card table{width:100%;border-collapse:collapse;font-size:14.5px;}
+.hours-card td{padding:8px 0;border-bottom:1px solid var(--line);}
+.hours-card td:last-child{text-align:right;font-weight:600;}
+.contact-lines{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+.contact-lines div{display:flex;gap:10px;align-items:center;font-size:14.5px;}
+.contact-lines svg{width:17px;height:17px;color:var(--rose);flex-shrink:0;}
+.map-embed{border:0;width:100%;height:280px;border-radius:16px;filter:sepia(8%);}
+
+.booker{padding:36px;}
+.bk-step{margin-bottom:32px;}
+.bk-step.locked{opacity:.35;pointer-events:none;}
+.bk-label{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;}
+.bk-label .n{font-family:'Playfair Display',serif;font-size:22px;color:var(--rose);}
+.bk-label h3{margin:0;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;}
+.svc-pick{display:flex;justify-content:space-between;align-items:center;gap:14px;width:100%;text-align:left;background:none;border:1px solid var(--line);padding:15px 18px;margin-bottom:10px;cursor:pointer;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);border-radius:12px;transition:border-color .2s, background .2s;}
+.svc-pick small{display:block;color:rgba(51,37,31,.5);font-size:12px;margin-top:2px;}
+.svc-pick .p{font-family:'Playfair Display',serif;font-size:17px;white-space:nowrap;}
+.svc-pick:hover{border-color:var(--rose);}
+.svc-pick.sel{border:1.5px solid var(--rose);background:var(--blush);}
+.svc-pick:focus-visible{outline:2px solid var(--rose);outline-offset:2px;}
+.days,.slots{display:flex;gap:10px;flex-wrap:wrap;}
+.day,.slot{background:none;border:1px solid var(--line);padding:10px 14px;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);min-width:72px;text-align:center;border-radius:10px;transition:border-color .2s, background .2s;}
+.day b{display:block;font-size:15px;font-weight:500;}
+.day small{color:rgba(51,37,31,.5);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;}
+.day:hover,.slot:hover{border-color:var(--rose);}
+.day.sel,.slot.sel{border:1.5px solid var(--rose);background:var(--ink);color:#fff;}
+.day.sel small{color:rgba(255,255,255,.6);}
+.slot.gone{opacity:.3;text-decoration:line-through;pointer-events:none;}
+.day:focus-visible,.slot:focus-visible{outline:2px solid var(--rose);outline-offset:2px;}
+.summary{border-top:1px solid var(--line);padding-top:22px;margin-top:6px;font-size:15px;}
+.summary b{font-family:'Playfair Display',serif;font-size:19px;}
+.form-note{font-size:12.5px;color:rgba(51,37,31,.5);margin-top:14px;}
+.form-success{display:none;background:var(--blush);border:1px solid var(--rose);border-radius:12px;padding:16px;font-size:14px;margin-bottom:18px;}
+form label{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px;color:rgba(51,37,31,.6);}
+form input,form textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);margin-bottom:18px;background:var(--cream);}
+form input:focus,form textarea:focus{outline:2px solid var(--rose);}
+.fallback{margin-top:14px;font-size:13px;color:rgba(51,37,31,.55);}
+@media (max-width:900px){.book-grid{grid-template-columns:1fr;}.booker{padding:26px;}}
+</style>
+</head>
+<body>
+<div class="demo-banner">DEMO CONCEPT SITE — a design sample for Edenic Ink Brows' new Kelowna location, not affiliated with or published by the business</div>
+
+<header><div class="wrap"><nav>
+  <a class="logo" href="index.html">Edenic <em>Ink</em> Brows</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="studio.html">The Studio</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a class="active" href="book.html">Book</a></li>
+  </ul>
+  <a class="btn" href="#booker" style="padding:11px 24px;">Book</a>
+</nav></div></header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Book Kelowna</span>
+    <h1>Pick a time that suits you</h1>
+    <p>Choose a service, a day, and an open slot below. This mirrors the real booking flow at edenicink.square.site, styled for Kelowna.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="book-grid">
+    <div class="book-side">
+      <div class="hours-card card">
+        <h3>Studio hours (Kelowna)</h3>
+        <table>
+          <tbody>
+            <tr><td>Tuesday – Friday</td><td>10am – 5:30pm</td></tr>
+            <tr><td>Saturday</td><td>9am – 3pm</td></tr>
+            <tr><td>Sunday &amp; Monday</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <div class="contact-lines">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10Z"/><circle cx="12" cy="11" r="2.5"/></svg> Kelowna, BC (address confirmed at booking)</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 8l9 6 9-6M3 8v10h18V8M3 8l9-4 9 4"/></svg> edenicpmu@gmail.com</div>
+        </div>
+      </div>
+      <iframe class="map-embed" title="Map to Edenic Ink Brows, Kelowna" src="https://maps.google.com/maps?q=Kelowna+BC&z=12&output=embed" loading="lazy"></iframe>
+      <p class="fallback">Prefer the studio's real booking page? <a href="https://edenicink.square.site" target="_blank" rel="noopener" style="color:var(--rose);">edenicink.square.site →</a></p>
+    </div>
+
+    <div id="booker" class="booker card">
+      <div class="form-success" id="ok"></div>
+      <div class="bk-step" id="s1">
+        <div class="bk-label"><span class="n">01</span><h3>Choose a service</h3></div>
+        <div id="svcs"></div>
+      </div>
+      <div class="bk-step locked" id="s2">
+        <div class="bk-label"><span class="n">02</span><h3>Pick a day</h3></div>
+        <div class="days" id="days"></div>
+      </div>
+      <div class="bk-step locked" id="s3">
+        <div class="bk-label"><span class="n">03</span><h3>Pick a time</h3></div>
+        <div class="slots" id="slots"></div>
+      </div>
+      <div class="bk-step locked" id="s4">
+        <div class="bk-label"><span class="n">04</span><h3>Your details</h3></div>
+        <div class="summary" id="sum" style="margin-bottom:20px;"></div>
+        <form id="bkform">
+          <label for="name">Name</label>
+          <input id="name" type="text" autocomplete="name" required />
+          <label for="phone">Mobile number (for confirmation text)</label>
+          <input id="phone" type="tel" autocomplete="tel" required />
+          <label for="notes">First time here? Anything to know?</label>
+          <textarea id="notes" rows="2" placeholder="First microblading appointment, allergies, inspo photos to bring…"></textarea>
+          <button class="btn gold" type="submit" style="width:100%;justify-content:center;">Request this appointment</button>
+        </form>
+        <p class="form-note">Demo booking flow for the concept site. On the live site this would sync with the studio's real Square booking calendar.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <nav><a href="studio.html">The Studio</a><a href="services.html">Services</a><a href="book.html">Book</a></nav>
+  <p>&copy; 2026 Edenic Ink Brows — demo site created as a design sample.</p>
+  <p class="fine">This concept site was put together by a local web design service as an unsolicited sample, using Edenic Ink Brows' own public booking link and Instagram for reference. Not affiliated with or endorsed by Edenic Ink Brows. If you'd rather not be contacted again about this, just reply and let us know.</p>
+</div></footer>
+
+<script>
+const SERVICES=[
+ {n:"Microblading",d:"90 min · hair-stroke detail",p:"$450"},
+ {n:"Nano brows",d:"90 min · fine machine strokes",p:"$480"},
+ {n:"Combo brows",d:"100 min · hand strokes + shading",p:"$520"},
+ {n:"Annual refresh",d:"60 min · returning clients",p:"$220"},
+ {n:"Brow lamination & tint",d:"45 min · no needles",p:"$85"},
+ {n:"Tint only",d:"20 min",p:"$35"}
+];
+const SLOTS=["10:00 am","11:30 am","1:00 pm","2:30 pm","4:00 pm"];
+let pick={svc:null,day:null,slot:null};
+
+function unlock(id){document.getElementById(id).classList.remove("locked");}
+function daysList(){
+  const out=[],now=new Date();
+  for(let i=1;out.length<7;i++){
+    const d=new Date(now);d.setDate(now.getDate()+i);
+    const dow=d.getDay();
+    if(dow===0||dow===1)continue; // closed Sun & Mon
+    out.push(d);
+  }
+  return out;
+}
+function taken(d,slotIdx){return (d.getDate()*5+slotIdx*3)%4===0;}
+
+document.getElementById("svcs").innerHTML=SERVICES.map((s,i)=>
+ `<button type="button" class="svc-pick" data-i="${i}"><span>${s.n}<small>${s.d}</small></span><span class="p">${s.p}</span></button>`).join("");
+document.querySelectorAll(".svc-pick").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".svc-pick").forEach(x=>x.classList.remove("sel"));
+  b.classList.add("sel");pick.svc=SERVICES[b.dataset.i];unlock("s2");renderDays();});
+
+function renderDays(){
+  const el=document.getElementById("days");
+  el.innerHTML=daysList().map((d)=>
+   `<button type="button" class="day" data-t="${d.getTime()}"><small>${d.toLocaleDateString("en-CA",{weekday:"short"})}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString("en-CA",{month:"short"})}</small></button>`).join("");
+  el.querySelectorAll(".day").forEach(b=>b.onclick=()=>{
+    el.querySelectorAll(".day").forEach(x=>x.classList.remove("sel"));
+    b.classList.add("sel");pick.day=new Date(+b.dataset.t);pick.slot=null;unlock("s3");renderSlots();});
+}
+function renderSlots(){
+  const el=document.getElementById("slots");
+  el.innerHTML=SLOTS.map((s,i)=>
+   `<button type="button" class="slot${taken(pick.day,i)?" gone":""}" data-s="${s}">${s}</button>`).join("");
+  el.querySelectorAll(".slot:not(.gone)").forEach(b=>b.onclick=()=>{
+    el.querySelectorAll(".slot").forEach(x=>x.classList.remove("sel"));
+    b.classList.add("sel");pick.slot=b.dataset.s;unlock("s4");sum();});
+}
+function sum(){
+  const d=pick.day.toLocaleDateString("en-CA",{weekday:"long",month:"long",day:"numeric"});
+  document.getElementById("sum").innerHTML=`<b>${pick.svc.n}</b><br>${d} at ${pick.slot} · ${pick.svc.p}`;
+  document.getElementById("s4").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+document.getElementById("bkform").onsubmit=e=>{
+  e.preventDefault();
+  const ok=document.getElementById("ok");
+  const d=pick.day.toLocaleDateString("en-CA",{weekday:"long",month:"long",day:"numeric"});
+  ok.innerHTML=`Request sent: <b>${pick.svc.n}</b> on ${d} at ${pick.slot}. The studio will text you to confirm. <em>(Demo flow, nothing was actually booked.)</em>`;
+  ok.style.display="block";
+  ok.scrollIntoView({behavior:"smooth",block:"center"});
+  e.target.reset();
+};
+</script>
+</body>
+</html>

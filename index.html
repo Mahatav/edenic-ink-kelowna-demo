@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Edenic Ink Brows | Now Booking in Kelowna</title>
+<meta name="description" content="Edenic Ink Brows, established in Chilliwack, is now booking microblading, nano brows, and lamination appointments in Kelowna, BC." />
+<link rel="stylesheet" href="styles.css" />
+<style>
+.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;overflow:hidden;padding:0;}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(30,20,16,.82) 0%, rgba(30,20,16,.35) 48%, rgba(30,20,16,.06) 72%);}
+.hero-inner{position:relative;z-index:2;padding:0 28px 72px;width:100%;color:#fff;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:22px;}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.6rem);line-height:1.06;max-width:15ch;margin:0 0 20px;}
+.hero h1 em{font-style:italic;color:#E9C9A8;}
+.hero p{font-size:18px;max-width:46ch;color:rgba(255,255,255,.86);margin:0 0 32px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:#fff;}
+.marquee-track{display:flex;gap:52px;white-space:nowrap;padding:15px 0;animation:scroll 24s linear infinite;width:max-content;}
+.marquee span{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--rose-deep);display:flex;align-items:center;gap:16px;}
+.marquee span::after{content:"·";color:var(--line);font-style:normal;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
+
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.story-photos{position:relative;height:440px;}
+.story-photos img{position:absolute;border-radius:16px;box-shadow:0 24px 60px rgba(51,37,31,.18);object-fit:cover;}
+.story-photos img:nth-child(1){width:64%;height:76%;top:0;left:0;z-index:2;}
+.story-photos img:nth-child(2){width:52%;height:52%;bottom:0;right:0;z-index:1;border:6px solid var(--cream);}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.svc{padding:32px;text-align:center;transition:transform .2s, box-shadow .2s;}
+.svc:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(51,37,31,.1);}
+.svc h3{font-size:19px;}
+.svc .price{font-family:'Playfair Display',serif;color:var(--rose);font-size:17px;display:block;margin-top:12px;}
+.svc p{margin:0;font-size:14px;color:rgba(51,37,31,.65);}
+
+.testimonial{max-width:760px;margin:0 auto;text-align:center;}
+.testimonial svg{width:34px;height:34px;color:var(--rose);margin-bottom:20px;}
+.testimonial p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.45;margin:0 0 20px;}
+.testimonial cite{font-style:normal;font-size:13.5px;color:rgba(51,37,31,.6);font-weight:600;}
+.stars{color:var(--gold);letter-spacing:3px;margin-bottom:18px;font-size:15px;}
+
+.cta-band{background:var(--ink);color:#fff;border-radius:28px;padding:60px;text-align:center;}
+.cta-band h2{color:#fff;font-size:clamp(1.7rem,3vw,2.4rem);}
+.cta-band p{color:rgba(255,255,255,.72);max-width:52ch;margin:14px auto 30px;}
+</style>
+</head>
+<body>
+<div class="demo-banner">DEMO CONCEPT SITE — a design sample for Edenic Ink Brows' new Kelowna location, not affiliated with or published by the business</div>
+
+<header><div class="wrap"><nav>
+  <a class="logo" href="index.html">Edenic <em>Ink</em> Brows</a>
+  <ul>
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="studio.html">The Studio</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="book.html">Book</a></li>
+  </ul>
+  <a class="btn" href="book.html" style="padding:11px 24px;">Book Kelowna</a>
+</nav></div></header>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=1800&q=80&auto=format&fit=crop" alt="Close-up of natural, well-groomed eyebrows" />
+  <div class="hero-inner wrap">
+    <span class="hero-badge">New — Now booking in Kelowna</span>
+    <h1>The brows Chilliwack trusts, <em>now closer to home.</em></h1>
+    <p>Edenic Ink Brows brings its microblading and nano brow work to Kelowna: precise, natural-looking results from a studio with a following.</p>
+    <div class="hero-actions">
+      <a class="btn gold" href="book.html">Check Kelowna availability</a>
+      <a class="btn ghost" href="studio.html" style="border-color:rgba(255,255,255,.4);color:#fff;">Meet the studio</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Microblading</span><span>Nano Brows</span><span>Brow Lamination</span><span>Est. Chilliwack</span><span>Now in Kelowna</span>
+    <span>Microblading</span><span>Nano Brows</span><span>Brow Lamination</span><span>Est. Chilliwack</span><span>Now in Kelowna</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="story">
+    <div class="story-photos">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=80&auto=format&fit=crop" alt="Finished brow detail" />
+      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=700&q=80&auto=format&fit=crop" alt="Studio treatment in progress" />
+    </div>
+    <div>
+      <span class="eyebrow">Why Edenic</span>
+      <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);">Brow work people used to drive for</h2>
+      <p style="color:rgba(51,37,31,.7);">Edenic Ink Brows spent years building a name in Chilliwack for microblading that heals natural, not drawn-on. Kelowna clients no longer need to make the trip out west, the same technique is now local.</p>
+      <div class="trust-row">
+        <div><b>Chilliwack</b>original studio, established name</div>
+        <div><b>Kelowna</b>newly opened, same standards</div>
+        <div><b>@edenicinkbrows</b>on Instagram</div>
+      </div>
+      <a class="btn ghost" href="studio.html" style="margin-top:28px;">Read the full story</a>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="section-head">
+      <span class="eyebrow">The menu</span>
+      <h2>A quick look at the work</h2>
+      <p>Three core services make up most Kelowna bookings. Full menu, aftercare, and process detail on the services page.</p>
+    </div>
+    <div class="services">
+      <div class="svc card"><h3>Microblading</h3><p>Hair-stroke detail that heals soft and natural over 1 to 3 years.</p><span class="price">from $450</span></div>
+      <div class="svc card"><h3>Nano Brows</h3><p>A finer machine technique for precise, longer-lasting definition.</p><span class="price">from $480</span></div>
+      <div class="svc card"><h3>Brow Lamination &amp; Tint</h3><p>Low-commitment fullness and shape, no needles, lasts weeks.</p><span class="price">from $85</span></div>
+    </div>
+    <div style="text-align:center;margin-top:32px;"><a class="btn ghost" href="services.html">See the full menu &amp; aftercare</a></div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="stars">★★★★★</div>
+    <div class="testimonial">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6C4.87 8.3 4 10.3 4 12.75c0 2.9 1.99 5.25 4.44 5.25 1.9 0 3.31-1.5 3.31-3.31 0-1.66-1.16-2.94-2.72-3.15C9.5 9.4 10.86 8 12.7 6.8l-1.06-1.4C10.1 6.03 8.6 6 7.17 6Zm9.66 0C14.53 8.3 13.66 10.3 13.66 12.75c0 2.9 1.99 5.25 4.44 5.25 1.9 0 3.3-1.5 3.3-3.31 0-1.66-1.15-2.94-2.71-3.15.53-1.14 1.89-2.54 3.73-3.74l-1.06-1.4c-1.54 1.63-3.04 1.6-4.47 1.6Z"/></svg>
+      <p>I drove out from Kelowna to Chilliwack for my first set, twice. Having the same studio five minutes away now is the whole reason I'm rebooking.</p>
+      <cite>— sample review, styled for this demo</cite>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="cta-band">
+      <span class="eyebrow" style="color:#E9C9A8;">Ready when you are</span>
+      <h2>Book your Kelowna appointment</h2>
+      <p>Pick a service and a time that works, confirmation goes out the same way Chilliwack clients already know.</p>
+      <a class="btn gold" href="book.html">Start booking</a>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap">
+  <nav><a href="studio.html">The Studio</a><a href="services.html">Services</a><a href="book.html">Book</a></nav>
+  <p>&copy; 2026 Edenic Ink Brows — demo site created as a design sample.</p>
+  <p class="fine">This concept site was put together by a local web design service as an unsolicited sample, using Edenic Ink Brows' own public booking link and Instagram for reference. Not affiliated with or endorsed by Edenic Ink Brows. If you'd rather not be contacted again about this, just reply and let us know.</p>
+</div></footer>
+</body>
+</html>
